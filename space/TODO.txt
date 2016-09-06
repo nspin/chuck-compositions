@@ -1,0 +1,10 @@
+. . *. ..*
+
+fm+envelope
+
+fm.ck
+moe.ck
+blit.ck <--
+blit2.ck <--
+foo.ck
+foo2.ck
