@@ -1,6 +1,5 @@
 /*
  * space.ck
- * Nick Spinale
  */
 
 Gain sdac => dac;
