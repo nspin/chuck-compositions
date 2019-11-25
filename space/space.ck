@@ -1,11 +1,6 @@
 /*
  * space.ck
  * Nick Spinale
- * MUSC 208
- * Carleton College
- *
- * Samples come from [redacted], and some ideas (the random harmonics and the
- * coefficients of the blit filter) come from examples in the ChucK source tree.
  */
 
 Gain sdac => dac;
@@ -58,7 +53,7 @@ class Universe {
 
 }
 
-// Util
+// Helpers
 
 fun SndBuf load(string name) {
     SndBuf b;
@@ -209,7 +204,7 @@ SndBuf pop;
 "special:glot_pop" => pop.read;
 pop.samples() => pop.pos;
 
-fun void weird() {
+fun void pops() {
 
     Universe u;
     for (0 => int i; i < 39 * 4; i++) {
@@ -223,7 +218,7 @@ fun void weird() {
 
 }
 
-fun void weirdctrl() {
+fun void ctrl1() {
 
     Universe u;
 
@@ -249,7 +244,7 @@ fun void weirdctrl() {
 
 }
 
-fun void weirdctrl2() {
+fun void ctrl2() {
     Universe u;
     .5 => pop.rate;
     for (0 => int i; i < 8; i++) {
@@ -269,16 +264,16 @@ fun void weirdctrl2() {
 
 }
 
-// SPORKFEST
+// Realize
 
 spork ~ drum1();
 spork ~ drum2();
 spork ~ blit();
 spork ~ blitAmp();
 spork ~ blitEnd();
-spork ~ weird();
-spork ~ weirdctrl();
-spork ~ weirdctrl2();
+spork ~ pops();
+spork ~ ctrl1();
+spork ~ ctrl2();
 
 .6 => sdac.gain;
 Universe u;
